@@ -1,0 +1,87 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Cache directories
+.npm
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# IDE/Editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# Large media files
+*.mp4
+*.mov
+*.wmv
+*.avi
+*.flv
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.psd
+*.ai
+*.indd
+
+# Compiled binary addons
+build/Release
+
+# Large data files
+*.csv
+*.dat
+*.sql
+*.sqlite
+*.sqlite3
+*.gz
+*.tar
+*.zip
+*.rar
+*.7z
+
+# Package files
+*.tgz
+
+# Local development specific files
+.local/
+coverage/
