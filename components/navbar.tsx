@@ -75,30 +75,31 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="sm"
+            <a
+              href="/api/cv"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 text-white hover:bg-teal-700/50 border-none shadow-none"
               style={{ borderRadius: "99px" }}
             >
               CV
-            </Button>
-          </nav>
+            </a>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden absolute right-4 z-50">
-            <button
-              className="p-2 rounded-full focus:outline-none bg-teal-800/90 backdrop-blur-sm border border-teal-700/30"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6 text-white" />
-              ) : (
-                <Menu className="h-6 w-6 text-white" />
-              )}
-            </button>
-          </div>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden absolute right-4 z-50">
+              <button
+                className="p-2 rounded-full focus:outline-none bg-teal-800/90 backdrop-blur-sm border border-teal-700/30"
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+              >
+                {isOpen ? (
+                  <X className="h-6 w-6 text-white" />
+                ) : (
+                  <Menu className="h-6 w-6 text-white" />
+                )}
+              </button>
+            </div>
+          </nav>
         </div>
       </div>
 
@@ -126,13 +127,15 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button
-              variant="outline"
-              className="flex items-center gap-2 w-full justify-center text-white hover:bg-white hover:text-teal-900"
-            >
-              <FileText className="h-4 w-4" />
-              Download CV
-            </Button>
+            <a href="/api/cv" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 w-full justify-center text-white hover:bg-white hover:text-teal-900"
+              >
+                <FileText className="h-4 w-4" />
+                CV
+              </Button>
+            </a>
           </div>
         </motion.div>
       )}

@@ -204,7 +204,11 @@ export default function Home() {
           >
             <Linkedin className="h-6 w-6 text-white hover:text-slate-300 transition-colors" />
           </a>
-          <a href="mailto:nt.thom.ng@gmail.com">
+          <a
+            href="mailto:nt.thom.ng@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Mail className="h-6 w-6 text-white hover:text-slate-300 transition-colors" />
           </a>
         </div>
@@ -287,7 +291,7 @@ export default function Home() {
               <ExperienceCard
                 role="Bachelor | Group Project Manager"
                 company="Kristiansand Kommune"
-                period="2024 - present"
+                period="2024 - 2025"
                 description="Bachelor thesis with Krisitiansand Kommune and Kartverket."
                 pageRoute="/bachelor-project"
               />
@@ -352,14 +356,6 @@ export default function Home() {
                 githubUrl="https://github.com"
                 liveUrl="https://example.com"
               />
-              <ProjectCard
-                title="Personal Finance Tracker"
-                description="A budget management tool with expense categorization, savings goals, and visual reports."
-                technologies={["Next.js", "Chart.js", "Supabase", "Auth0"]}
-                imageUrl="/placeholder.svg?height=300&width=500"
-                githubUrl="https://github.com"
-                liveUrl="https://example.com"
-              />
             </div>
           </motion.div>
         </div>
@@ -383,40 +379,39 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lg mb-6">
-                  I'm currently open to freelance opportunities and interesting
-                  projects. Whether you have a question or just want to say hi,
-                  I'll do my best to get back to you!
+                  I'm currently open for work. Whether you have a question or
+                  just want to say hi, I'll do my best to get back to you!
                 </p>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5" />
                     <a
-                      href="mailto:contact@example.com"
+                      href="mailto:nt.thom.ng@gmail.com"
                       className="hover:underline"
                     >
-                      contact@example.com
+                      nt.thom.ng@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Github className="h-5 w-5" />
                     <a
-                      href="https://github.com"
+                      href="https://github.com/NThomTNg"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      github.com/alexporter
+                      github.com/NThomTNg
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Linkedin className="h-5 w-5" />
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/thomas-nguyen-024860253/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      linkedin.com/in/alexporter
+                      linkedin.com/in/thomas-nguyen
                     </a>
                   </div>
                 </div>
@@ -437,7 +432,7 @@ export default function Home() {
                   rows={5}
                   className="p-3 rounded-md bg-teal-800 border border-teal-700 text-white placeholder:text-teal-400 focus:outline-none focus:ring-2 focus:ring-white"
                 ></textarea>
-                <Button className="bg-white text-teal-900 hover:bg-slate-200 mt-2">
+                <Button className="bg-teal-800 text-teal-900 hover:bg-slate-200 mt-2">
                   Send Message
                 </Button>
               </form>

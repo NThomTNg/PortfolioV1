@@ -62,7 +62,7 @@ export default function TechGrid() {
       icon: <FaDocker className="text-3xl w-8 h-8 text-blue-500" />,
     },
     {
-      name: "Azure",
+      name: "Azure DevOps",
       icon: <SiMicrosoftazure className="text-3xl w-8 h-8 text-blue-500" />,
     },
   ];
@@ -78,7 +78,7 @@ export default function TechGrid() {
         >
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
           <div className="relative z-10 flex items-center gap-3">
-            <div className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+            <div className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
               {tech.icon}
             </div>
             <span className="font-semibold transition-all duration-300 group-hover:text-teal-800">

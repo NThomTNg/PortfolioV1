@@ -37,9 +37,9 @@ export default function ProjectCard({
         transition: { type: "spring", stiffness: 300, damping: 20 },
       }}
     >
-      <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl group border-none shadow-md">
+      <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl group border-none shadow-md bg-slate-50 dark:bg-slate-900">
         <div className="relative h-48 w-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <Image
             src={imageUrl || "/placeholder.svg"}
             alt={title}
@@ -48,17 +48,19 @@ export default function ProjectCard({
           />
         </div>
         <CardHeader>
-          <CardTitle className="group-hover:text-teal-700 transition-colors">
+          <CardTitle className="group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
             {title}
           </CardTitle>
-          <CardDescription>{description}</CardDescription>
+          <CardDescription className="text-slate-600 dark:text-slate-400">
+            {description}
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-2 mt-2">
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full"
+                className="px-2 py-1 text-xs font-medium bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 rounded-full"
               >
                 {tech}
               </span>
@@ -70,7 +72,7 @@ export default function ProjectCard({
             variant="outline"
             size="sm"
             asChild
-            className="group-hover:border-teal-600 group-hover:text-teal-700 transition-colors"
+            className="border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors"
           >
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-4 w-4" />
@@ -80,7 +82,7 @@ export default function ProjectCard({
           <Button
             size="sm"
             asChild
-            className="bg-teal-700 hover:bg-teal-800 transition-colors"
+            className="bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-700 text-white transition-colors"
           >
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
