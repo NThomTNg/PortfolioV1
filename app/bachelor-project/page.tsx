@@ -18,7 +18,6 @@ export default function BachelorProject() {
       <div className="pt-20 pb-12 bg-gradient-to-r from-teal-800 to-teal-900 text-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <Button
-            variant="ghost"
             className="mb-6 text-white hover:bg-teal-700/50"
             onClick={handleBackClick}
           >
@@ -61,31 +60,40 @@ export default function BachelorProject() {
           <p className="text-black">
             This bachelor thesis project is a collaboration with Kristiansand
             Kommune and Kartverket to develop a GIS solution using LLM (Large
-            Language Models). The project aims to create innovative solutions
-            for geographic information systems.
+            Language Models). The project's goal is to make a working MVP (minimal viable product)
+            from a proof of concept to explore how LLMs can
+            enhance geographic information systems, making them more intuitive
+            and usable for users without extensive GIS knowledge.
           </p>
 
           <h2 className="text-black font-bold text-2xl">My Role</h2>
           <p className="text-black">
             As the Group Project Manager, I'm responsible for coordinating the
             team's efforts, ensuring deadlines are met, and maintaining
-            communication between stakeholders.
+            communication between stakeholders. On a technical level, I was involved
+            in the development of the frontend part of the project, focusing on
+            creating functionality that allows users to interact with the GIS
+            system. This inclueded implementing map functionality, dataset searching,
+            and conversation features that allow users to chat with the integrated AI chatbot.
           </p>
 
           <h2 className="text-black font-bold text-2xl">Technologies Used</h2>
           <ul className="text-black">
-            <li className="text-black">GIS Systems</li>
-            <li className="text-black">Large Language Models</li>
-            <li className="text-black">Web Development Technologies</li>
-            <li className="text-black">Data Processing Tools</li>
+            <li className="text-black">Frontend: Next.js and Typescript</li>
+            <li className="text-black">Backend: Python</li>
+            <li className="text-black">AI & LLM: RAG (Retrival-Augmented Generation) with Langchain and Langgraph</li>
+            <li className="text-black">Database: pgvector for storing and retrival</li>
+            <li className="text-black">Containerization: Docker to ensure consistant testing and running of the application</li>
           </ul>
 
           <h2 className="text-black font-bold text-2xl">Goals and Outcomes</h2>
           <p className="text-black">
-            The project aims to investigate how large language models can be
-            integrated with geographic information systems to create more
-            intuitive and powerful mapping tools. This includes developing
-            prototypes and conducting user testing to validate our approach.
+            The project reached its goal of creating a working MVP that
+            demonstrates the potential of LLMs in GIS applications. The team completed the project in May of 2025,
+            where we presented our application to Kristiansand Kommune. In June we presented our project during a general
+            company meeting at Kartverket, where we shared the functionality and the potential future applications of our work.
+            It was later presented by Kartverket to the Norwegian government during a press confrence about digitalisation with the 
+            use of AI. 
           </p>
         </motion.div>
       </div>

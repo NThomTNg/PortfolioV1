@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/projects";
 import ExperienceCard from "@/components/experience";
 import Navbar from "@/components/navbar";
 import BackToTop from "@/components/backToTop";
 import TechGrid from "@/components/techGrid";
 import Bilde from "@/app/assets/Thomas.png";
+import WikiImage from "@/app/assets/project2.jpg";
+import EShopImage from "@/app/assets/project1.jpg";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -230,17 +231,15 @@ export default function Home() {
               <div>
                 <p className="text-lg text-slate-700 mb-4">
                   My name is Thomas Nguyen. I'm a 23 year old IT student from
-                  Trondheim, currently attending the University of Agder. I'm
+                  Trondheim, currently attending NTNU. I'm
                   working on my skills to become a skilled fullstack developer.
                   My passion lies in developing web applications and learning
-                  new technologies. Right now I'm trying to learn Next.js.
+                  new technologies.
                 </p>
                 <p className="text-lg text-slate-700 mb-4">
                   As I have been working with multiple different projects, I
                   have accumulated a lot of experience in different
-                  technologies. I am currently working on my bachelors in
-                  collabiration with Kristiansand Kommune and Kartverket to
-                  develop a GIS solution using LLM.
+                  technologies. I am currently working on a wiki project using SvelteKit.
                 </p>
                 <p className="text-lg text-slate-700">
                   When I'm not coding, you can find me playing video games,
@@ -328,125 +327,71 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <ProjectCard
-                title="E-commerce Platform"
+                title="Fantasy Wiki"
                 description="A full-featured online store with product management, cart functionality, and payment processing."
-                technologies={["Next.js", "TypeScript", "Stripe", "MongoDB"]}
-                imageUrl="/placeholder.svg?height=300&width=500"
+                technologies={["SvelteKit", "TypeScript", "Stripe", "MongoDB"]}
+                imageUrl={WikiImage.src}
                 githubUrl="https://github.com"
                 liveUrl="https://example.com"
               />
               <ProjectCard
-                title="Task Management App"
+                title="Pc Parts Shop"
                 description="A collaborative task manager with real-time updates, team workspaces, and analytics dashboard."
                 technologies={["React", "Node.js", "Socket.io", "PostgreSQL"]}
-                imageUrl="/placeholder.svg?height=300&width=500"
+                imageUrl={EShopImage.src}
                 githubUrl="https://github.com"
                 liveUrl="https://example.com"
               />
-              <ProjectCard
-                title="Weather Dashboard"
-                description="A weather application with 7-day forecasts, location search, and interactive maps."
-                technologies={[
-                  "React",
-                  "OpenWeather API",
-                  "Mapbox",
-                  "Tailwind CSS",
-                ]}
-                imageUrl="/placeholder.svg?height=300&width=500"
-                githubUrl="https://github.com"
-                liveUrl="https://example.com"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="py-20 px-4 md:px-8 bg-teal-900 text-white pt-28"
-      >
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Get In Touch
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-lg mb-6">
-                  I'm currently open for work. Whether you have a question or
-                  just want to say hi, I'll do my best to get back to you!
-                </p>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5" />
-                    <a
-                      href="mailto:nt.thom.ng@gmail.com"
-                      className="hover:underline"
-                    >
-                      nt.thom.ng@gmail.com
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Github className="h-5 w-5" />
-                    <a
-                      href="https://github.com/NThomTNg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline"
-                    >
-                      github.com/NThomTNg
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Linkedin className="h-5 w-5" />
-                    <a
-                      href="https://www.linkedin.com/in/thomas-nguyen-024860253/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline"
-                    >
-                      linkedin.com/in/thomas-nguyen
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <form className="flex flex-col gap-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="p-3 rounded-md bg-teal-800 border border-teal-700 text-white placeholder:text-teal-400 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="p-3 rounded-md bg-teal-800 border border-teal-700 text-white placeholder:text-teal-400 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <textarea
-                  placeholder="Message"
-                  rows={5}
-                  className="p-3 rounded-md bg-teal-800 border border-teal-700 text-white placeholder:text-teal-400 focus:outline-none focus:ring-2 focus:ring-white"
-                ></textarea>
-                <Button className="bg-teal-800 text-teal-900 hover:bg-slate-200 mt-2">
-                  Send Message
-                </Button>
-              </form>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 md:px-8 bg-teal-950 text-white text-center">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-sm text-teal-400 mt-2">
-            Built with Next.js and Tailwind CSS
+      <footer id="contact" className="bg-teal-900 text-white">
+        <div className="max-w-5xl mx-auto py-20 px-4 md:px-60 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            I'm currently open to new opportunities and collaborations. Feel
+            free to reach out if you want to connect, discuss a project, or just say hello!
           </p>
+          <div className="flex justify-center gap-6 mb-8">
+            <a
+              href="mailto:nt.thom.ng@gmail.com"
+              className="flex items-center gap-2 hover:text-teal-300 transition-colors"
+            >
+              <Mail className="h-5 w-5" />
+              <span>nt.thom.ng@gmail.com</span>
+            </a>
+            <a
+              href="https://github.com/NThomTNg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-teal-300 transition-colors"
+            >
+              <Github className="h-5 w-5" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/thomas-nguyen-024860253/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-teal-300 transition-colors"
+            >
+              <Linkedin className="h-5 w-5" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div className="border-t border-teal-800 pt-8 mt-8">
+            <p className="text-sm text-teal-400">
+              © {new Date().getFullYear()} Thomas Nguyen. All Rights Reserved.
+            </p>
+            <p className="text-sm text-teal-400 mt-2">
+              Built with Next.js and Tailwind CSS
+            </p>
+          </div>
         </div>
       </footer>
     </main>

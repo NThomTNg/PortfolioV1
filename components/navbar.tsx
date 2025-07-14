@@ -25,7 +25,6 @@ export default function Navbar() {
         "skills",
         "experience",
         "projects",
-        "contact",
       ];
       const scrollPosition = window.scrollY + 100;
 
@@ -51,7 +50,6 @@ export default function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (
