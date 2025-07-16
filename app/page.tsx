@@ -328,19 +328,19 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <ProjectCard
                 title="Fantasy Wiki"
-                description="A full-featured online store with product management, cart functionality, and payment processing."
-                technologies={["SvelteKit", "TypeScript", "Stripe", "MongoDB"]}
+                description="A wiki style page filled with different articles that can be edited, uploaded or deleted."
+                technologies={["SvelteKit", "TypeScript", "Express", "AzureDB"]}
                 imageUrl={WikiImage.src}
                 githubUrl="https://github.com"
                 liveUrl="https://example.com"
               />
               <ProjectCard
                 title="Pc Parts Shop"
-                description="A collaborative task manager with real-time updates, team workspaces, and analytics dashboard."
-                technologies={["React", "Node.js", "Socket.io", "PostgreSQL"]}
+                description="A full-featured online store with product management, cart functionality, and payment processing."
+                technologies={["React", "Typescript", "Node.js"]}
                 imageUrl={EShopImage.src}
-                githubUrl="https://github.com"
-                liveUrl="https://example.com"
+                githubUrl="https://github.com/NThomTNg/ShoppingCart"
+                liveUrl="https://nthomtng.github.io/ShoppingCart/"
               />
             </div>
           </motion.div>

@@ -1,11 +1,23 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import ImageCarousel from "@/components/ImageCarousel";
+import GroupPro1 from "@/app/assets/Grouppro1.jpg";
+import GroupPro2 from "@/app/assets/Grouppro2.jpg";
+import GroupPro3 from "@/app/assets/Grouppro3.jpg";
+import GroupPro4 from "@/app/assets/Grouppro4.jpg";
 
-export default function NostedProject() {
+const projectImages = [
+  { src: GroupPro1.src, alt: "Group Project screenshot 1" },
+  { src: GroupPro2.src, alt: "Group Project screenshot 2" },
+  { src: GroupPro3.src, alt: "Group Project screenshot 3" },
+  { src: GroupPro4.src, alt: "Group Project screenshot 3" },
+];
+
+export default function BachelorProject() {
   const router = useRouter();
 
   const handleBackClick = () => {
@@ -15,82 +27,128 @@ export default function NostedProject() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <div className="pt-20 pb-12 bg-gradient-to-r from-teal-800 to-teal-900 text-white">
+      <div className="pt-24 pb-16 bg-gradient-to-r from-slate-800 to-slate-900 text-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
-          <Button
-            variant="ghost"
-            className="mb-6 text-white hover:bg-teal-700/50"
+          <button
+            className="mb-8 bg-transparent text-white hover:text-gray-200 flex items-center gap-2"
             onClick={handleBackClick}
           >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back
-          </Button>
+            <ArrowLeft className="h-5 w-5" /> Back to Home
+          </button>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-5xl font-bold mb-4"
+            className="text-3xl md:text-5xl font-bold mb-6"
           >
-            Nøsted Project
+            School Group Project for Nøsted
           </motion.h1>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="flex flex-wrap gap-2 mb-4"
+            className="flex flex-wrap gap-3 mb-4"
           >
-            <span className="bg-teal-700 px-3 py-1 rounded-full text-sm">
-              University Project
+            <span className="bg-slate-600/80 px-4 py-1.5 rounded-full text-sm font-medium">
+              Nøsted
             </span>
-            <span className="bg-teal-700 px-3 py-1 rounded-full text-sm">
-              Web Development
-            </span>
-            <span className="bg-teal-700 px-3 py-1 rounded-full text-sm">
+            <span className="bg-slate-600/80 px-4 py-1.5 rounded-full text-sm font-medium">
               2023
+            </span>
+            <span className="bg-slate-600/80 px-4 py-1.5 rounded-full text-sm font-medium">
+              UIA
             </span>
           </motion.div>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-12 text-black">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 text-slate-800">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="prose prose-lg max-w-none text-black"
+          className="space-y-10"
         >
-          <h2 className="text-black font-bold text-2xl">Project Description</h2>
-          <p className="text-black">
-            As part of my studies at the University of Agder, I participated in
-            a group project to develop a web application for Nøsted. This
-            project was a significant part of our practical curriculum, allowing
-            us to apply our theoretical knowledge in a real-world scenario.
-          </p>
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Project Overview</h2>
+            <p className="text-lg leading-relaxed mb-4">
+              The project was a cooperation with Nøsted, a company specializing in the design, 
+              production, and delivery of chains, forestry tracks, tractor implements, and lifting 
+              and mooring equipment. Operating under the brands TRYGG, IGLAND, and FRAM, the company 
+              offers a diverse range of products and services. Our role was to help them develop a a 
+              digital solution for them to process service orders from their customers. Before they had 
+              to do this manually, by phone or email. We developed a web application that allows their 
+              customers to create service orders, and Nøsted to administrate and process these orders.
+            </p>
+          </section>
 
-          <h2 className="text-black font-bold text-2xl">My Role</h2>
-          <p className="text-black">
-            As a team member, I contributed to various aspects of the project,
-            including frontend development, database design, and project
-            documentation. I collaborated with a diverse team of students to
-            meet the requirements set by both our university instructors and the
-            client.
-          </p>
+          {/* Image Carousel Section */}
+          <section className="my-2">
+            <ImageCarousel images={projectImages} />
+          </section>
 
-          <h2 className="text-black font-bold text-2xl">Technologies Used</h2>
-          <ul className="text-black">
-            <li>HTML/CSS/JavaScript</li>
-            <li>Database Management</li>
-            <li>Version Control</li>
-            <li>Project Management Tools</li>
-          </ul>
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">My Role</h2>
+            <p className="text-lg leading-relaxed mb-4">
+              This was the first real project I worked on with a group of students where we 
+              had to not only think about the technical aspects of the project, but also the 
+              design, user experience, and system architecture. We also had a close dialouge 
+              with the company, keeping them frequently updated on our progress. This project was a 
+              great learning experience for me, where I learned alot about working with C# and .NET 
+              which I was not familiar with before. I also got to use Docker in practise for the first 
+              time, which helped me grasp how to work with containers and how to deploy applications in a 
+              more efficient way. During the projects time, I got to develop my backend skills alot, and it
+              was fun learning how to set up, and inject data into a database. Working with fellow students was a 
+              great experience, as we all had different skills and knowledge that we could share with each other.
+            </p>
+          </section>
 
-          <h2 className="text-black font-bold text-2xl">
-            Outcomes and Achievements
-          </h2>
-          <p className="text-black">
-            Our team successfully delivered a functional web application that
-            addressed the client's needs. This project enhanced my teamwork
-            skills and provided valuable experience in managing client
-            expectations and delivering a product according to specifications.
-          </p>
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Technologies Used</h2>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+              <li className="flex items-start space-x-2">
+                <span className="text-slate-600 font-bold">•</span>
+                <span><span className="font-medium">Frontend:</span> Razor Syntax</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-slate-600 font-bold">•</span>
+                <span><span className="font-medium">Backend:</span> C#</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-slate-600 font-bold">•</span>
+                <span><span className="font-medium">Database:</span> MariaDB and MySQL</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-slate-600 font-bold">•</span>
+                <span><span className="font-medium">Containerization:</span> Docker</span>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Goals and Outcomes</h2>
+            <p className="text-lg leading-relaxed mb-4">
+              We achieve our goal of making a working application that could be used by the company to process service orders.
+              The application allows administrators to create, update, and delete service orders, as well as view the status of each order.
+              It is also possible for administrators to change the roles of users, and create reports to each service order. During our
+              exam we got positive feedback from the company and professors, and we were happy with the result of our work.
+            </p>
+          </section>
+
+          {/* Project Links Section */}
+          <section className="pt-8 border-t border-slate-200">
+            <h2 className="text-2xl font-bold mb-6 text-slate-900">Project Link</h2>
+            <div className="flex flex-wrap gap-6">
+              <a 
+                href="https://github.com/jonaslefdal/AdminDesk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors"
+              >
+                <Github size={24} />
+                <span className="font-medium">GitHub Repository</span>
+              </a>
+            </div>
+          </section>
         </motion.div>
       </div>
     </div>
