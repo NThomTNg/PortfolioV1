@@ -190,29 +190,6 @@ export default function Home() {
             technologies
           </p>
         </motion.div>
-        <div className="absolute bottom-8 flex gap-4">
-          <a
-            href="https://github.com/NThomTNg"
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            <Github className="h-6 w-6 text-white hover:text-slate-300 transition-colors" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/thomas-nguyen-024860253/"
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            <Linkedin className="h-6 w-6 text-white hover:text-slate-300 transition-colors" />
-          </a>
-          <a
-            href="mailto:nt.thom.ng@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Mail className="h-6 w-6 text-white hover:text-slate-300 transition-colors" />
-          </a>
-        </div>
       </section>
 
       {/* About Section */}
@@ -385,9 +362,6 @@ export default function Home() {
             </a>
           </div>
           <div className="border-t border-teal-800 pt-8 mt-8">
-            <p className="text-sm text-teal-400">
-              © {new Date().getFullYear()} Thomas Nguyen. All Rights Reserved.
-            </p>
             <p className="text-sm text-teal-400 mt-2">
               Built with Next.js and Tailwind CSS
             </p>
