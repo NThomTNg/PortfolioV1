@@ -73,8 +73,7 @@ export default function TechGrid() {
         <div
           key={index}
           className="flex items-center gap-3 border-2 border-teal-500 p-4 rounded-xl transition-all duration-300 
-          hover:shadow-lg hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-teal-50 
-          hover:border-teal-600 group relative overflow-hidden"
+          hover:bg-gradient-to-br hover:border-teal-600 group relative overflow-hidden"
         >
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
           <div className="relative z-10 flex items-center gap-3">

@@ -308,8 +308,8 @@ export default function Home() {
                 description="A wiki style page filled with different articles that can be edited, uploaded or deleted."
                 technologies={["SvelteKit", "TypeScript", "Express", "AzureDB"]}
                 imageUrl={WikiImage.src}
-                githubUrl="https://github.com"
-                liveUrl="https://example.com"
+                githubUrl="https://github.com/NThomTNg/wikiProject"
+                liveUrl="https://fantasywiki.vercel.app/"
               />
               <ProjectCard
                 title="Pc Parts Shop"
