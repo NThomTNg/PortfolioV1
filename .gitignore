@@ -85,3 +85,4 @@ build/Release
 # Local development specific files
 .local/
 coverage/
+.vercel
