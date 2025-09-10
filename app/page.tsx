@@ -306,7 +306,7 @@ export default function Home() {
               <ProjectCard
                 title="Fantasy Wiki"
                 description="A wiki style page filled with different articles that can be edited, uploaded or deleted."
-                technologies={["SvelteKit", "TypeScript", "Express", "AzureDB"]}
+                technologies={["SvelteKit", "TypeScript", "Express", "AzureDB", "Azure"]}
                 imageUrl={WikiImage.src}
                 githubUrl="https://github.com/NThomTNg/wikiProject"
                 liveUrl="https://fantasywiki.vercel.app/"
@@ -314,7 +314,7 @@ export default function Home() {
               <ProjectCard
                 title="Pc Parts Shop"
                 description="A full-featured online store with product management, cart functionality, and payment processing."
-                technologies={["React", "Typescript", "Node.js"]}
+                technologies={["React", "Typescript", "Node.js", "JSON"]}
                 imageUrl={EShopImage.src}
                 githubUrl="https://github.com/NThomTNg/ShoppingCart"
                 liveUrl="https://nthomtng.github.io/ShoppingCart/"
