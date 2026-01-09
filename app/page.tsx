@@ -265,6 +265,13 @@ export default function Home() {
             </h2>
             <div className="grid gap-6">
               <ExperienceCard
+                role="Internship | System Developer"
+                company="Curio"
+                period="2025 - Present"
+                description="System development internship at Curio."
+                pageRoute="/curio"
+              />
+              <ExperienceCard
                 role="Bachelor | Group Project Manager"
                 company="Kristiansand Kommune"
                 period="2024 - 2025"
