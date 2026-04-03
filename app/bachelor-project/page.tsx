@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -24,7 +23,7 @@ export default function BachelorProject() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div id="main-content" className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <div className="pt-24 pb-16 bg-gradient-to-r from-orange-500 to-orange-700 text-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <button
@@ -62,7 +61,7 @@ export default function BachelorProject() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 text-slate-800">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 text-slate-800 dark:text-slate-200">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +69,7 @@ export default function BachelorProject() {
           className="space-y-10"
         >
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-orange-900">Bachelor Overview</h2>
+            <h2 className="text-3xl font-bold mb-6 text-orange-900 dark:text-orange-300">Bachelor Overview</h2>
             <p className="text-lg leading-relaxed mb-4">
               This bachelor thesis project is a collaboration with Kristiansand
               Kommune and Kartverket to develop a GIS solution using LLM (Large
@@ -87,7 +86,7 @@ export default function BachelorProject() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-orange-900">My Role</h2>
+            <h2 className="text-3xl font-bold mb-6 text-orange-900 dark:text-orange-300">My Role</h2>
             <p className="text-lg leading-relaxed mb-4">
               As the Group Project Manager, I was responsible for coordinating the
               team's efforts, ensuring deadlines were met, and maintained
@@ -100,7 +99,7 @@ export default function BachelorProject() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-orange-900">Technologies Used</h2>
+            <h2 className="text-3xl font-bold mb-6 text-orange-900 dark:text-orange-300">Technologies Used</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
               <li className="flex items-start space-x-2">
                 <span className="text-orange-600 font-bold">•</span>
@@ -126,7 +125,7 @@ export default function BachelorProject() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-orange-900">Goals and Outcomes</h2>
+            <h2 className="text-3xl font-bold mb-6 text-orange-900 dark:text-orange-300">Goals and Outcomes</h2>
             <p className="text-lg leading-relaxed mb-4">
               The project reached its goal of creating a working MVP that
               demonstrates the potential of LLMs in GIS applications. The team completed the project in May of 2025,
@@ -141,14 +140,14 @@ export default function BachelorProject() {
           </section>
 
           {/* Project Links Section */}
-          <section className="pt-8 border-t border-slate-200">
-            <h2 className="text-2xl font-bold mb-6 text-orange-900">Project Links</h2>
+          <section className="pt-8 border-t border-slate-200 dark:border-slate-800">
+            <h2 className="text-2xl font-bold mb-6 text-orange-900 dark:text-orange-300">Project Links</h2>
             <div className="flex flex-wrap gap-6">
               <a 
                 href="https://github.com/kartverket/geogpt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-orange-700 hover:text-orange-900 transition-colors"
+                className="flex items-center gap-2 text-orange-700 dark:text-orange-300 hover:text-orange-900 dark:hover:text-orange-200 transition-colors"
               >
                 <Github size={24} />
                 <span className="font-medium">GitHub Repository</span>
@@ -157,7 +156,7 @@ export default function BachelorProject() {
                 href="https://www.youtube.com/watch?v=gBn2UN6ycjs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-orange-700 hover:text-orange-900 transition-colors"
+                className="flex items-center gap-2 text-orange-700 dark:text-orange-300 hover:text-orange-900 dark:hover:text-orange-200 transition-colors"
               >
                 <ExternalLink size={24} />
                 <span className="font-medium">Live Demo</span>
@@ -166,7 +165,7 @@ export default function BachelorProject() {
                 href="https://www.regjeringen.no/no/tema/arbeidsliv/Statlig-arbeidsgiverpolitikk/konferanser/lanseringsseminar190625/id3108382/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-orange-700 hover:text-orange-900 transition-colors"
+                className="flex items-center gap-2 text-orange-700 dark:text-orange-300 hover:text-orange-900 dark:hover:text-orange-200 transition-colors"
               >
                 <ExternalLink size={24} />
                 <span className="font-medium">Press confrence presentation</span>

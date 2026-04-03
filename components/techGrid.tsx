@@ -68,19 +68,19 @@ export default function TechGrid() {
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-teal-900">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-teal-900 dark:text-teal-200">
       {technologies.map((tech, index) => (
         <div
           key={index}
-          className="flex items-center gap-3 border-2 border-teal-500 p-4 rounded-xl transition-all duration-300 
-          hover:bg-gradient-to-br hover:border-teal-600 group relative overflow-hidden"
+          className="flex items-center gap-3 border-2 border-teal-500 dark:border-teal-700 p-4 rounded-xl transition-all duration-300 
+          hover:bg-gradient-to-br hover:border-teal-600 dark:hover:border-teal-500 group relative overflow-hidden"
         >
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
           <div className="relative z-10 flex items-center gap-3">
             <div className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
               {tech.icon}
             </div>
-            <span className="font-semibold transition-all duration-300 group-hover:text-teal-800">
+            <span className="font-semibold transition-all duration-300 group-hover:text-teal-800 dark:group-hover:text-teal-100">
               {tech.name}
             </span>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import type { KeyboardEvent } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -13,6 +14,7 @@ interface ImageCarouselProps {
 
 const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [failedImages, setFailedImages] = useState<number[]>([]);
 
   const next = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -37,8 +39,27 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     return null;
   }
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "ArrowLeft") {
+      prev();
+    }
+    if (event.key === "ArrowRight") {
+      next();
+    }
+  };
+
   return (
-    <div className="relative overflow-hidden rounded-xl">
+    <div
+      className="relative overflow-hidden rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Project screenshots carousel"
+    >
+      <span className="sr-only" aria-live="polite">
+        Showing image {currentIndex + 1} of {images.length}
+      </span>
       <div className="relative h-[450px] md:h-[600px] lg:h-[700px] w-full">
         {images.map((image, index) => (
           <div
@@ -47,23 +68,25 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
               index === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 80vw"
-              className="object-contain" 
-              priority={index === 0}
-              onError={(e) => {
-                // If image fails to load, apply a default background color
-                const target = e.target as HTMLElement;
-                target.style.backgroundColor = '#1e4e5c';
-                target.style.display = 'flex';
-                target.style.alignItems = 'center';
-                target.style.justifyContent = 'center';
-                target.textContent = 'Image not found';
-              }}
-            />
+            {failedImages.includes(index) ? (
+              <div className="h-full w-full flex items-center justify-center bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl">
+                Image unavailable
+              </div>
+            ) : (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 80vw"
+                className="object-contain"
+                priority={index === 0}
+                onError={() => {
+                  setFailedImages((previous) =>
+                    previous.includes(index) ? previous : [...previous, index]
+                  );
+                }}
+              />
+            )}
           </div>
         ))}
       </div>

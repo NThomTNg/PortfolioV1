@@ -24,7 +24,7 @@ export default function BachelorProject() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div id="main-content" className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <div className="pt-24 pb-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <button
@@ -56,7 +56,7 @@ export default function BachelorProject() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 text-slate-800">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 text-slate-800 dark:text-slate-200">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function BachelorProject() {
           className="space-y-10"
         >
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-blue-900">Project Overview</h2>
+            <h2 className="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">Project Overview</h2>
             <p className="text-lg leading-relaxed mb-4">
               Swipload is a software development company focusing on developing transport planning and management software.
               During my internship at Swipload in 2024, I was tasked with working on a new feature of their application. This feature 
@@ -80,7 +80,7 @@ export default function BachelorProject() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-blue-900">My Role</h2>
+            <h2 className="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">My Role</h2>
             <p className="text-lg leading-relaxed mb-4">
               As a we were four interns working on the same project, I was responsible for coordinating the frontend development efforts
               and ensuring that our work aligned with the overall project goals. I collaborated closely with my fellow interns to split 
@@ -92,7 +92,7 @@ export default function BachelorProject() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-blue-900">Technologies Used</h2>
+            <h2 className="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">Technologies Used</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
               <li className="flex items-start space-x-2">
                 <span className="text-blue-600 font-bold">•</span>
@@ -114,7 +114,7 @@ export default function BachelorProject() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-blue-900">Goals and Outcomes</h2>
+            <h2 className="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">Goals and Outcomes</h2>
             <p className="text-lg leading-relaxed mb-4">
               After 3 months of work, we were succsessful in delivering a fully functional page that met the requirements set by the company.
               The page allows drivers to view their upcoming trips, including details such as the destination, time, and cargo. As it was connected
@@ -125,14 +125,14 @@ export default function BachelorProject() {
           </section>
 
           {/* Project Links Section */}
-          <section className="pt-8 border-t border-slate-200">
-            <h2 className="text-2xl font-bold mb-6 text-blue-900">Project Links</h2>
+          <section className="pt-8 border-t border-slate-200 dark:border-slate-800">
+            <h2 className="text-2xl font-bold mb-6 text-blue-900 dark:text-blue-300">Project Links</h2>
             <div className="flex flex-wrap gap-6">
               <a 
                 href="https://nthomtng.github.io/PraksisNettSide/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors"
+                className="flex items-center gap-2 text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-200 transition-colors"
               >
                 <Monitor size={24} />
                 <span className="font-medium">Our internship website</span>
@@ -141,7 +141,7 @@ export default function BachelorProject() {
                 href="https://www.swipload.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors"
+                className="flex items-center gap-2 text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-200 transition-colors"
               >
                 <ExternalLink size={24} />
                 <span className="font-medium">Swipload website</span>

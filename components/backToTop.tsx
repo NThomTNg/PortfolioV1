@@ -43,7 +43,7 @@ export default function BackToTop() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-teal-700 text-white p-3 rounded-full shadow-lg hover:bg-teal-800 transition-colors"
+          className="fixed bottom-8 right-8 z-50 bg-teal-700 dark:bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-800 dark:hover:bg-teal-500 transition-colors"
           aria-label="Back to top"
         >
           <ChevronUp className="h-6 w-6" />

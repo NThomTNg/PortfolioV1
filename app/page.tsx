@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import ProjectCard from "@/components/projects";
 import ExperienceCard from "@/components/experience";
 import Navbar from "@/components/navbar";
@@ -34,10 +34,22 @@ export default function Home() {
 
   useEffect(() => {
     if (loading) return;
+
     const saveScrollPosition = () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
         sessionStorage.setItem("homeScrollPosition", scrollPosition.toString());
+      }
+    };
+
+    const handleDocumentClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (
+        target instanceof HTMLAnchorElement ||
+        (target instanceof Element &&
+          target.closest('a, [data-is-experience-card="true"]'))
+      ) {
+        saveScrollPosition();
       }
     };
 
@@ -47,24 +59,13 @@ export default function Home() {
         window.scrollTo(0, parseInt(savedPosition, 10));
       }, 0);
     }
+
     window.addEventListener("beforeunload", saveScrollPosition);
-
-    const handleRouteChangeStart = () => {
-      saveScrollPosition();
-    };
-
-    window.addEventListener("click", (e) => {
-      if (
-        e.target instanceof HTMLAnchorElement ||
-        (e.target instanceof Element &&
-          e.target.closest('[data-is-experience-card="true"]'))
-      ) {
-        saveScrollPosition();
-      }
-    });
+    window.addEventListener("click", handleDocumentClick);
 
     return () => {
       window.removeEventListener("beforeunload", saveScrollPosition);
+      window.removeEventListener("click", handleDocumentClick);
     };
   }, [loading]);
 
@@ -167,20 +168,25 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main id="main-content" className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <Navbar />
       <BackToTop />
 
       {/* Hero Section */}
       <section
         id="home"
-        className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900 text-white px-4 md:px-8"
+        className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900 dark:from-slate-900 dark:via-slate-950 dark:to-black text-white px-4 md:px-8"
       >
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-24 left-8 h-28 w-28 rounded-full bg-white/10 blur-2xl" />
+          <div className="absolute bottom-24 right-8 h-44 w-44 rounded-full bg-teal-300/20 blur-3xl" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl"
+          className="text-center max-w-3xl relative z-10"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Hi, I'm Thomas Nguyen
@@ -189,6 +195,7 @@ export default function Home() {
             A passionate full-stack developer specializing in modern web
             technologies
           </p>
+
         </motion.div>
       </section>
 
@@ -201,31 +208,31 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900 dark:text-teal-300">
               About Me
             </h2>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <p className="text-lg text-slate-700 mb-4">
-                  My name is Thomas Nguyen. I'm a 23 year old IT student from
+                <p className="text-lg text-slate-700 dark:text-slate-300 mb-4">
+                  My name is Thomas Nguyen. I'm a 24 year old IT student from
                   Trondheim, currently attending NTNU. I'm
                   working on my skills to become a skilled fullstack developer.
                   My passion lies in developing web applications and learning
                   new technologies.
                 </p>
-                <p className="text-lg text-slate-700 mb-4">
+                <p className="text-lg text-slate-700 dark:text-slate-300 mb-4">
                   As I have been working with multiple different projects, I
                   have accumulated a lot of experience in different
                   technologies. I am currently working on a wiki project using SvelteKit.
                 </p>
-                <p className="text-lg text-slate-700">
+                <p className="text-lg text-slate-700 dark:text-slate-300">
                   When I'm not coding, you can find me playing video games,
                   going to the gym, reading books, or spending time with my
                   friends.
                 </p>
               </div>
               <div className="flex justify-center">
-                <div className="w-72 rounded-xl overflow-hidden border-2 border-teal-900">
+                <div className="w-72 rounded-xl overflow-hidden border-2 border-teal-900 dark:border-teal-500">
                   <Image src={Bilde} alt="Profile" className="object-cover" />
                 </div>
               </div>
@@ -235,7 +242,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 md:px-8 bg-slate-100 pt-28">
+      <section id="skills" className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900 pt-28">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -243,7 +250,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900 dark:text-teal-300 text-center">
               Technologies & Skills
             </h2>
             <TechGrid />
@@ -260,14 +267,14 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900 dark:text-teal-300">
               Experience
             </h2>
             <div className="grid gap-6">
               <ExperienceCard
                 role="Internship | System Developer"
                 company="Curio"
-                period="2025 - Present"
+                period="2025 - 2025"
                 description="System development internship at Curio."
                 pageRoute="/curio"
               />
@@ -275,22 +282,15 @@ export default function Home() {
                 role="Bachelor | Group Project Manager"
                 company="Kristiansand Kommune"
                 period="2024 - 2025"
-                description="Bachelor thesis with Krisitiansand Kommune and Kartverket."
+                description="Bachelor thesis with Kristiansand Kommune and Kartverket."
                 pageRoute="/bachelor-project"
               />
               <ExperienceCard
                 role="Internship | Frontend Developer"
                 company="Swipload"
                 period="2024 - 2024"
-                description="Svelte application development as a intern frontend developer."
+                description="Svelte application development as an intern frontend developer."
                 pageRoute="/swipload"
-              />
-              <ExperienceCard
-                role="School Project | Groupmember"
-                company="University of Agder"
-                period="2023 - 2023"
-                description="Group project developing a web application for Nøsted"
-                pageRoute="/nosted"
               />
             </div>
           </motion.div>
@@ -298,7 +298,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 md:px-8 bg-slate-100 pt-28">
+      <section id="projects" className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900 pt-28">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -306,7 +306,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-teal-900 dark:text-teal-300">
               Projects
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -319,7 +319,7 @@ export default function Home() {
                 liveUrl="https://fantasywiki.vercel.app/"
               />
               <ProjectCard
-                title="Pc Parts Shop"
+                title="PC Parts Shop"
                 description="A full-featured online store with product management, cart functionality, and payment processing."
                 technologies={["React", "Typescript", "Node.js", "JSON"]}
                 imageUrl={EShopImage.src}
@@ -332,8 +332,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-teal-900 text-white">
-        <div className="max-w-5xl mx-auto py-20 px-4 md:px-60 text-center">
+      <footer id="contact" className="bg-teal-900 dark:bg-slate-950 text-white">
+        <div className="max-w-5xl mx-auto py-20 px-4 sm:px-6 md:px-60 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get In Touch
           </h2>
@@ -341,19 +341,19 @@ export default function Home() {
             I'm currently open to new opportunities and collaborations. Feel
             free to reach out if you want to connect, discuss a project, or just say hello!
           </p>
-          <div className="flex justify-center gap-6 mb-8">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8">
             <a
               href="mailto:nt.thom.ng@gmail.com"
-              className="flex items-center gap-2 hover:text-teal-300 transition-colors"
+              className="flex items-center justify-center gap-2 text-sm sm:text-base hover:text-teal-300 dark:hover:text-teal-200 transition-colors"
             >
               <Mail className="h-5 w-5" />
-              <span>nt.thom.ng@gmail.com</span>
+              <span className="break-all sm:break-normal">nt.thom.ng@gmail.com</span>
             </a>
             <a
               href="https://github.com/NThomTNg"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-teal-300 transition-colors"
+              className="flex items-center justify-center gap-2 text-sm sm:text-base hover:text-teal-300 dark:hover:text-teal-200 transition-colors"
             >
               <Github className="h-5 w-5" />
               <span>GitHub</span>
@@ -362,14 +362,14 @@ export default function Home() {
               href="https://www.linkedin.com/in/thomas-nguyen-024860253/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-teal-300 transition-colors"
+              className="flex items-center justify-center gap-2 text-sm sm:text-base hover:text-teal-300 dark:hover:text-teal-200 transition-colors"
             >
               <Linkedin className="h-5 w-5" />
               <span>LinkedIn</span>
             </a>
           </div>
-          <div className="border-t border-teal-800 pt-8 mt-8">
-            <p className="text-sm text-teal-400 mt-2">
+          <div className="border-t border-teal-800 dark:border-slate-800 pt-8 mt-8">
+            <p className="text-sm text-teal-400 dark:text-teal-300 mt-2">
               Built with Next.js and Tailwind CSS
             </p>
           </div>
