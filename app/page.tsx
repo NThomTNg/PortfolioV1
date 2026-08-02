@@ -9,7 +9,7 @@ import ExperienceCard from "@/components/experience";
 import Navbar from "@/components/navbar";
 import BackToTop from "@/components/backToTop";
 import TechGrid from "@/components/techGrid";
-import Bilde from "@/app/assets/Thomas.png";
+import Bilde from "@/app/assets/thomi.jpg";
 import WikiImage from "@/app/assets/project2.jpg";
 import EShopImage from "@/app/assets/project1.jpg";
 
@@ -272,9 +272,16 @@ export default function Home() {
             </h2>
             <div className="grid gap-6">
               <ExperienceCard
+                role="Internship | IT Consultant"
+                company="Netcompany"
+                period="2026 - 2026"
+                description="Backend development and scalability work on a public sector project."
+                pageRoute="/netcompany"
+              />
+              <ExperienceCard
                 role="Internship | System Developer"
                 company="Curio"
-                period="2025 - 2025"
+                period="2025 - 2026"
                 description="System development internship at Curio."
                 pageRoute="/curio"
               />

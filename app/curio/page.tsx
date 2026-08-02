@@ -41,7 +41,7 @@ return (
             NTNU
             </span>
             <span className="bg-yellow-500/80 px-4 py-1.5 rounded-full text-sm font-medium">
-            Present
+            2025
             </span>
         </motion.div>
         </div>
