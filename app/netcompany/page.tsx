@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
@@ -86,7 +86,7 @@ export default function Netcompany() {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
               <li className="flex items-start space-x-2">
                 <span className="text-emerald-600 font-bold">•</span>
-                <span><span className="font-medium">Backend:</span> .NET</span>
+                <span><span className="font-medium">Backend:</span> .NET and Hangfire</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-emerald-600 font-bold">•</span>
@@ -101,6 +101,22 @@ export default function Netcompany() {
                 <span><span className="font-medium">Database:</span> PostgreSQL</span>
               </li>
             </ul>
+          </section>
+
+           {/* Project Links Section */}
+          <section className="pt-8 border-t border-slate-200 dark:border-slate-800">
+            <h2 className="text-2xl font-bold mb-6 text-emerald-900 dark:text-emerald-300">Project Links</h2>
+            <div className="flex flex-wrap gap-6">
+              <a
+                href="/api/recommendation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors"
+              >
+                <FileText size={24} />
+                <span className="font-medium">Letter of recommendation</span>
+              </a>
+            </div>
           </section>
         </motion.div>
       </div>

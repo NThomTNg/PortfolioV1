@@ -272,6 +272,13 @@ export default function Home() {
             </h2>
             <div className="grid gap-6">
               <ExperienceCard
+                role="Freelance | IT Consultant"
+                company="Self-employed"
+                period="2026 - Present"
+                description="Freelance IT consulting and development work for clients."
+                pageRoute="/freelance"
+              />
+              <ExperienceCard
                 role="Internship | IT Consultant"
                 company="Netcompany"
                 period="2026 - 2026"
